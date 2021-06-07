@@ -18,11 +18,11 @@ public class Main {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext("com.company.service");
         EnglishGreetingService englishGreetingService = (EnglishGreetingService) applicationContext.getBean("englishGreetingService");
         englishGreetingService.greet("jasprt");
-        System.out.println(" Hour: "+englishGreetingService.getTimeService().getCurrentTime());
+        System.out.println(" Hour: " + englishGreetingService.getTimeService().getCurrentTime());
 
         SpanishGreetingService spanishGreetingService = (SpanishGreetingService) applicationContext.getBean("spanishGreetingService");
         spanishGreetingService.greet("jasprt");
-        System.out.println(" Hour: "+spanishGreetingService.getTimeService().getCurrentTime());
+        System.out.println(" Hour: " + spanishGreetingService.getTimeService().getCurrentTime());
 
     }
 }
