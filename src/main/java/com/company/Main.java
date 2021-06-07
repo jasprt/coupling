@@ -1,27 +1,28 @@
 package com.company;
 
 import com.company.service.EnglishGreetingService;
-import com.company.service.GreetingService;
+import com.company.service.FrenchGreetingService;
 import com.company.service.SpanishGreetingService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
 
-    public static void main(String[] args) {
-        GreetingServiceFactory gsf = new GreetingServiceFactory();
-        //Select english/spanish/french
-        GreetingService gs = gsf.getGreetingService("french");
-        gs.greet("jasprt");
-        System.out.println("\n###############################################");
+    final static String GREETING_NAME = "Jasprt";
 
+    public static void main(String[] args) {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext("com.company.service");
+
         EnglishGreetingService englishGreetingService = (EnglishGreetingService) applicationContext.getBean("englishGreetingService");
-        englishGreetingService.greet("jasprt");
+        englishGreetingService.greet(GREETING_NAME);
         System.out.println(" Hour: " + englishGreetingService.getTimeService().getCurrentTime());
 
+        FrenchGreetingService frenchGreetingService = (FrenchGreetingService) applicationContext.getBean("frenchGreetingService");
+        frenchGreetingService.greet(GREETING_NAME);
+        System.out.println(" Hour: " + frenchGreetingService.getTimeService().getCurrentTime());
+
         SpanishGreetingService spanishGreetingService = (SpanishGreetingService) applicationContext.getBean("spanishGreetingService");
-        spanishGreetingService.greet("jasprt");
+        spanishGreetingService.greet(GREETING_NAME);
         System.out.println(" Hour: " + spanishGreetingService.getTimeService().getCurrentTime());
 
     }
