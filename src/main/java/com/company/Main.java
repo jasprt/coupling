@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.service.EnglishGreetingService;
 import com.company.service.FrenchGreetingService;
+import com.company.service.HindiGreetingService;
 import com.company.service.SpanishGreetingService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -24,6 +25,10 @@ public class Main {
         SpanishGreetingService spanishGreetingService = (SpanishGreetingService) applicationContext.getBean("spanishGreetingService");
         spanishGreetingService.greet(GREETING_NAME);
         System.out.println(" Hour: " + spanishGreetingService.getTimeService().getCurrentTime());
+
+        HindiGreetingService hindiGreetingService = (HindiGreetingService) applicationContext.getBean("hindiGreetingService");
+        hindiGreetingService.greet(GREETING_NAME);
+        System.out.println(" Hour: " + hindiGreetingService.getTimeService().getCurrentTime());
 
     }
 }
