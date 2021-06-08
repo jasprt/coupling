@@ -1,4 +1,4 @@
-package com.company.service;
+package com.company.service.timeService;
 
 import org.springframework.stereotype.Component;
 

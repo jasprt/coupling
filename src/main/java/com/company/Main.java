@@ -1,9 +1,9 @@
 package com.company;
 
-import com.company.service.EnglishGreetingService;
-import com.company.service.FrenchGreetingService;
+import com.company.service.greetingService.EnglishGreetingService;
+import com.company.service.greetingService.FrenchGreetingService;
+import com.company.service.greetingService.SpanishGreetingService;
 import com.company.service.HindiGreetingService;
-import com.company.service.SpanishGreetingService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
