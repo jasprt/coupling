@@ -1,14 +1,15 @@
-package com.company.service;
+package com.company.service.greetingService;
 
+import com.company.service.timeService.TimeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-public class EnglishGreetingService implements GreetingService {
+public class SpanishGreetingService implements GreetingService {
 
     @Autowired
-    EnglishGreetingService(@Qualifier("timeService12HourFormat") TimeService timeService) {
+    public SpanishGreetingService(@Qualifier("timeService24HourFormat") TimeService timeService) {
         this.timeService = timeService;
     }
 
@@ -16,7 +17,7 @@ public class EnglishGreetingService implements GreetingService {
 
     @Override
     public void greet(String name) {
-        System.out.print("Hello " + name + "!");
+        System.out.print("Hola " + name + "!");
     }
 
     @Override
